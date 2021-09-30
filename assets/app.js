@@ -1,3 +1,13 @@
+// Scroll Up/Down Add/Remove Class
+window.onscroll = function() {
+    const body = document.getElementById('body');
+    if (window.pageYOffset > 390) {
+        body.classList.add("scrolling");
+    } else {
+        body.classList.remove("scrolling");
+    }
+}
+
 const loadProducts = () => {
     const data = [{
         "id": 1,

@@ -59,6 +59,16 @@ input[type="color"]:focus,
   margin-top: -90px !important;
 }
 
+.scrolling .searchProduct {
+  position: fixed;
+  top: 90px;
+  left: 8.40%;
+  width: 59%;
+  z-index: 9;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
 .searchProduct {
   color: grey;
   padding: 40px;
@@ -132,7 +142,17 @@ header {
 
 /* Result Cart */
 .result-cart {
-  margin-top: -90px;
+  margin-top: -90px !important;
+}
+
+.scrolling .result-cart {
+  position: fixed;
+  top: 90px;
+  right: 3%;
+  width: 20%;
+  z-index: 9;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .result-cart {
@@ -166,4 +186,9 @@ header {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid gray;
+}
+
+/* Products */
+.scrolling .products {
+  margin-top: 115px;
 }
