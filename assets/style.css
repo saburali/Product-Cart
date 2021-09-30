@@ -1,3 +1,125 @@
+/*:root {*/
+/*  --grayDark: #6c757d;*/
+/*  --themeColor: rgb(230, 76, 60);*/
+/*  --themeColorAlpha1: rgba(230, 76, 60, 0.6);*/
+/*  --themeColorAlpha2: rgba(230, 76, 60, 0.8);*/
+/*  --themeColorAlpha3: rgba(230, 76, 60, 0.16);*/
+/*  --themeColorAlpha4: rgba(230, 76, 60, 0.23);*/
+/*  --themeColorAlpha5: rgba(230, 76, 60, 0.15);*/
+/*}*/
+
+/*body {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  overflow-x: hidden;*/
+/*}*/
+
+/*.themeLetter:first-letter {*/
+/*  color: var(--themeColor);*/
+/*}*/
+
+/*.btn {*/
+/*  color: var(--grayDark);*/
+/*  border-color: var(--grayDark);*/
+/*  transition: 0.4s all ease-in-out;*/
+/*}*/
+
+/*.btn:hover {*/
+/*  color: #fff;*/
+/*  border-color: var(--themeColor);*/
+/*  background-color: var(--themeColor);*/
+/*}*/
+
+/*button:focus,*/
+/*.btn[type="text"]:focus,*/
+/*button.btn:focus,*/
+/*.btn:active,*/
+/*textarea:focus,*/
+/*input[type="text"]:focus,*/
+/*input[type="password"]:focus,*/
+/*input[type="datetime"]:focus,*/
+/*input[type="datetime-local"]:focus,*/
+/*input[type="date"]:focus,*/
+/*input[type="month"]:focus,*/
+/*input[type="time"]:focus,*/
+/*input[type="week"]:focus,*/
+/*input[type="number"]:focus,*/
+/*input[type="email"]:focus,*/
+/*input[type="url"]:focus,*/
+/*input[type="search"]:focus,*/
+/*input[type="tel"]:focus,*/
+/*input[type="color"]:focus,*/
+/*.uneditable-input:focus {*/
+/*  border-color: var(--themeColorAlpha2);*/
+/*  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--themeColorAlpha1);*/
+/*  outline: 0 none !important;*/
+/*}*/
+
+/*.searchMeal {*/
+/*  color: grey;*/
+/*  padding: 40px;*/
+/*  font-size: 32px;*/
+/*  margin: 0 0 1rem;*/
+/*  text-align: center;*/
+/*  border-radius: 10px;*/
+/*  background-color: white;*/
+/*  transition: 0.4s all ease-in-out;*/
+/*  box-shadow: 0 3px 6px var(--themeColorAlpha3), 0 3px 6px var(--themeColorAlpha4);*/
+/*}*/
+
+/*.searchMeal h2 {*/
+/*  font-size: 15px;*/
+/*  text-align: left;*/
+/*}*/
+
+/*@media only screen and (max-width: 575px) {*/
+/*  .searchMeal h2 {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*}*/
+
+/*!* Search Result Info *!*/
+/*.searchInfo {*/
+/*  margin-top: 35px;*/
+/*  display: block;*/
+/*  font-size: 18px;*/
+/*  font-weight: 500;*/
+/*}*/
+
+/*@media only screen and (max-width: 575px) {*/
+/*  .searchInfo,*/
+/*  .searchInfo .text-end {*/
+/*    text-align: center !important;*/
+/*  }*/
+/*}*/
+
+/*!* Meal Showing *!*/
+/*#mealResult .card {*/
+/*  top: 0;*/
+/*  overflow: hidden;*/
+/*  border-radius: 10px;*/
+/*  position: relative;*/
+/*  transition: all 0.4s ease-in-out;*/
+/*}*/
+
+/*#mealResult .card:hover {*/
+/*  top: -7px;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*#mealResult .card .card-title {*/
+/*  font-size: 18px;*/
+/*  margin-bottom: 0;*/
+/*  height: 21px;*/
+/*  width: 100%;*/
+/*  overflow: hidden;*/
+/*  display: -webkit-box;*/
+/*  -webkit-line-clamp: 1;*/
+/*  text-overflow: ellipsis;*/
+/*  -webkit-box-orient: vertical;*/
+
+/*}*/
+
 body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
