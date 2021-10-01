@@ -184,12 +184,13 @@ const loadProducts = () => {
 const showProducts = (products) => {
     const allProducts = products.map((pd) => pd);
     for (const product of allProducts) {
+
         const image = product.images;
         const div = document.createElement("div");
         div.classList.add("col-md-4");
         div.innerHTML = `
             <div class="card mb-4">
-                <img src="${image}" class="card-img-top img-fluid p-4 border-bottom" alt="...">
+                <img src="${image ? image : `assets/image/image_not_found.png`}" class="card-img-top img-fluid p-4 border-bottom" alt="${image ? image : `assets/image/image_not_found.png`}">
                 <div class="card-body">
                     <p class="mb-1 category" title="${product.category}">Category: <span class="themeLetter" style="display: inline-block"> ${product.category} </span></p>
                     <h5 class="card-title themeLetter" title="Title: ${product.title}">
@@ -199,7 +200,7 @@ const showProducts = (products) => {
                         <h2 class="align-self-center mr-3 price" title="Price: $${product.price}"> $${product.price} </h2>
                         <div class="media-body">
                             <div class="rating-progressbar my-3">
-                                <p class="rating-value"> 3.7 </p>
+                                <p class="rating-value"> ${product.rating.rate} </p>
                                 <svg style="display:none;">
                                     <defs>
                                         <symbol id="fivestars">
@@ -221,12 +222,12 @@ const showProducts = (products) => {
                                     </defs>
                                 </svg>
                                 <div class="rating">
-                                    <progress class="rating-bg" value="3.7" max="5"></progress>
+                                    <progress class="rating-bg" value="${product.rating.rate}" max="5"></progress>
                                     <svg>
                                         <use xlink:href="#fivestars"/>
                                     </svg>
                                 </div>
-                                <p class="total-rating"> Total Rating: 259 </p>
+                                <p class="total-rating"> Total Rating: ${product.rating.count} </p>
                             </div>
                         </div>
                     </div>
