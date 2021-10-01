@@ -236,7 +236,7 @@ const showProducts = (products) => {
                         </div>
                     </div>
                     <div class="btn-group d-flex justify-content-between" role="group" aria-label="Basic example">
-                        <button type="button" onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="btn btn-secondary text-white" title="Add to Cart"><i class="fas fa-shopping-cart"></i></button>
+                        <button type="button" onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="btn btn-warning text-white" title="Add to Cart"><i class="fas fa-shopping-cart"></i></button>
                         <button type="button" class="btn btn-secondary text-white" title="Details"><i class="fas fa-info-circle"></i></button>
                     </div>
                 </div>
