@@ -18,6 +18,11 @@ window.onscroll = function () {
 const productSearch = () => {
     const inputField = document.getElementById('searchProduct');
     const textValue = inputField.value;
+    const url = `https://fakestoreapi.com/products/category/${textValue}`;
+
+    fetch(url)
+        .then(res=>res.json())
+        .then(json=>console.log(json))
 
     inputField.value = '';
 }
