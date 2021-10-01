@@ -113,33 +113,6 @@ header {
   background-image: url(image/banner.jpg);
 }
 
-/* Meal Showing */
-#mealResult .card {
-  top: 0;
-  overflow: hidden;
-  border-radius: 10px;
-  position: relative;
-  transition: all 0.4s ease-in-out;
-}
-
-#mealResult .card:hover {
-  top: -7px;
-  cursor: pointer;
-}
-
-#mealResult .card .card-title {
-  font-size: 18px;
-  margin-bottom: 0;
-  height: 21px;
-  width: 100%;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-
-}
-
 /* Result Cart */
 .result-cart {
   margin-top: -90px !important;
@@ -166,7 +139,7 @@ header {
   box-shadow: 0 3px 6px var(--themeColorAlpha3), 0 3px 6px var(--themeColorAlpha4);
 }
 
-.result-cart .title{
+.result-cart .title {
   bottom: -10px;
   position: relative;
   padding-bottom: 10px;
@@ -191,4 +164,112 @@ header {
 /* Products */
 .scrolling .products {
   margin-top: 115px;
+}
+
+.products .card {
+  top: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 3px 6px var(--themeColorAlpha3), 0 3px 6px var(--themeColorAlpha4);
+}
+
+.products .card:hover {
+  top: -7px;
+  cursor: pointer;
+}
+
+.products .category {
+  margin-bottom: 0;
+  height: 24px
+}
+
+.products .card-title {
+  font-size: 18px;
+  margin-bottom: 0;
+  height: 45px;
+  -webkit-line-clamp: 2 !important;
+}
+
+.products img {
+  min-height: 380px;
+  max-height: 380px;
+}
+
+.products .price {
+  margin: 0;
+  font-size: 48px;
+  height: 50px;
+}
+
+.products .media {
+  margin-top: -20px;
+}
+
+.products .media-body {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+.products .category,
+.products .card-title,
+.products .price {
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+
+/* Star Rating With Progressbar */
+.rating-progressbar {
+  position: relative;
+}
+
+.rating-progressbar .rating-value {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.rating-progressbar .total-rating {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.rating {
+  width: 120px;
+  height: 24px;
+  position: relative;
+  background-color: gray;
+}
+
+.rating progress.rating-bg {
+  -webkit-appearance: none;
+  -moz-appearence: none;
+  appearance: none;
+  border: none;
+  display: inline-block;
+  height: 24px;
+  width: 100%;
+  color: orange;
+}
+
+.rating progress.rating-bg::-webkit-progress-value {
+  background-color: orange;
+}
+
+.rating progress.rating-bg::-moz-progress-bar {
+  background-color: orange;
+}
+
+.rating svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

@@ -1,5 +1,5 @@
 // Scroll Up/Down Add/Remove Class
-window.onscroll = function() {
+window.onscroll = function () {
     const body = document.getElementById('body');
     if (window.pageYOffset > 390) {
         body.classList.add("scrolling");
@@ -180,17 +180,56 @@ const showProducts = (products) => {
     for (const product of allProducts) {
         const image = product.images;
         const div = document.createElement("div");
-        div.classList.add("row");
+        div.classList.add("col-md-4");
         div.innerHTML = `
-        <div class="col-md-4">
-          <div>
-                <img class="product-image" src=${image}></img>
-          </div>
-      <h3>${product.title}</h3>
-      <p>Category: ${product.category}</p>
-      <h2>Price: $ ${product.price}</h2>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+            <div class="card mb-4">
+                <img src="${image}" class="card-img-top img-fluid p-4 border-bottom" alt="...">
+                <div class="card-body">
+                    <p class="mb-1 category" title="${product.category}">Category: <span class="themeLetter" style="display: inline-block"> ${product.category} </span></p>
+                    <h5 class="card-title themeLetter" title="Title: ${product.title}">
+                        <span class="themeLetter" style="display: inline-block"> ${product.title} </span>
+                    </h5>
+                    <div class="media">
+                        <h2 class="align-self-center mr-3 price" title="Price: $${product.price}"> $${product.price} </h2>
+                        <div class="media-body">
+                            <div class="rating-progressbar my-3">
+                                <p class="rating-value"> 3.7 </p>
+                                <svg style="display:none;">
+                                    <defs>
+                                        <symbol id="fivestars">
+                                            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24"
+                                                  fill="white" fill-rule="evenodd"/>
+                                            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24"
+                                                  fill="white" fill-rule="evenodd"
+                                                  transform="translate(24)"/>
+                                            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24"
+                                                  fill="white" fill-rule="evenodd"
+                                                  transform="translate(48)"/>
+                                            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24"
+                                                  fill="white" fill-rule="evenodd"
+                                                  transform="translate(72)"/>
+                                            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24"
+                                                  fill="white" fill-rule="evenodd"
+                                                  transform="translate(96)"/>
+                                        </symbol>
+                                    </defs>
+                                </svg>
+                                <div class="rating">
+                                    <progress class="rating-bg" value="3.7" max="5"></progress>
+                                    <svg>
+                                        <use xlink:href="#fivestars"/>
+                                    </svg>
+                                </div>
+                                <p class="total-rating"> Total Rating: 259 </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-group d-flex justify-content-between" role="group" aria-label="Basic example">
+                        <button type="button" onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="btn btn-secondary text-white" title="Add to Cart"><i class="fas fa-shopping-cart"></i></button>
+                        <button type="button" class="btn btn-secondary text-white" title="Details"><i class="fas fa-info-circle"></i></button>
+                    </div>
+                </div>
+            </div>
       `;
         document.getElementById("all-products").appendChild(div);
     }
