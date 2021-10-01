@@ -21,8 +21,8 @@ const productSearch = () => {
     const url = `https://fakestoreapi.com/products/category/${textValue}`;
 
     fetch(url)
-        .then(res=>res.json())
-        .then(json=>console.log(json))
+        .then(res => res.json())
+        .then(json => console.log(json))
 
     inputField.value = '';
 }
@@ -39,6 +39,7 @@ const enterBtnAction = () => {
 }
 enterBtnAction();
 
+// Data File
 const loadProducts = () => {
     const data = [{
         "id": 1,
@@ -202,24 +203,18 @@ const loadProducts = () => {
         "rating": {"rate": 3.6, "count": 145}
     }];
     showProducts(data);
-
-    // fetch('https://fakestoreapi.com/products')
-    //     .then(res=>res.json())
-    //     .then(data=>showProducts(data))
 };
 
-
-// show all product in UI 
+// Show all product in UI
 const showProducts = (products) => {
     const allProducts = products.map((pd) => pd);
     for (const product of allProducts) {
 
-        // const image = ;
         const div = document.createElement("div");
         div.classList.add("col-md-4");
         div.innerHTML = `
             <div class="card mb-4">
-                <img src="${product.image ? product.image : `assets/image/image_not_found.png`}" class="card-img-top img-fluid p-4 border-bottom" alt="${product.image ? product.image : `assets/image/image_not_found.png`}">
+                <img src="${product.image ? product.image : `assets/image/image_not_found.png`}" class="card-img-top img-fluid p-4 border-bottom" alt="${product.title}">
                 <div class="card-body">
                     <p class="mb-1 category" title="${product.category}">Category: <span class="themeLetter" style="display: inline-block"> ${product.category} </span></p>
                     <h5 class="card-title themeLetter" title="Title: ${product.title}">
@@ -272,14 +267,14 @@ const showProducts = (products) => {
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Product More Inof</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Product More Inof...</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                             <div class="card">
-                                <img src="${product.image ? product.image : `assets/image/image_not_found.png`}" class="card-img-top img-fluid p-4 border-bottom" alt="${product.image ? product.image : `assets/image/image_not_found.png`}">
+                                <img src="${product.image ? product.image : `assets/image/image_not_found.png`}" class="card-img-top img-fluid p-4 border-bottom" alt="${product.title}">
                                 <div class="card-body">
                                     <h3 class="mb-3"> <span class="font-weight-bold themeLetter" style="display: inline-block">Product Name:</span> ${product.title} </h3>
                                     <h3 class="m-0"> <span class="font-weight-bold themeLetter" style="display: inline-block">Product Details:</span> ${product.description} </h3>
@@ -293,6 +288,8 @@ const showProducts = (products) => {
         document.getElementById("all-products").appendChild(div);
     }
 };
+
+// Update Price Function
 let count = 0;
 const addToCart = (id, price) => {
     count = count + 1;
@@ -310,13 +307,14 @@ const addToCart = (id, price) => {
     }
 };
 
+// Id Converter Funcion
 const getInputValue = (id) => {
     const element = document.getElementById(id).innerText;
     const converted = parseFloat(element);
     return converted;
 };
 
-// main price update function
+// Main price update function
 const updatePrice = (id, value) => {
     const convertedOldPrice = getInputValue(id);
     const convertPrice = parseFloat(value);
@@ -324,12 +322,12 @@ const updatePrice = (id, value) => {
     document.getElementById(id).innerText = total.toFixed(2);
 };
 
-// set innerText function
+// Set innerText function
 const setInnerText = (id, value) => {
     document.getElementById(id).innerText = Math.round(value);
 };
 
-// update delivery charge and total Tax
+// Update delivery charge and total Tax
 const updateTaxAndCharge = () => {
     const priceConverted = getInputValue("price");
     if (priceConverted > 200) {
@@ -346,7 +344,7 @@ const updateTaxAndCharge = () => {
     }
 };
 
-//grandTotal update function
+// Grand Total update function
 const updateTotal = () => {
     const grandTotal =
         getInputValue("price") + getInputValue("delivery-charge") +
@@ -389,6 +387,7 @@ function buyNow() {
     button.disabled = true;
 }
 
+// Custom Modal
 function closeModal() {
     const buyModal = document.getElementById('body');
     buyModal.classList.remove('modalShow');
