@@ -20,8 +20,19 @@ const productSearch = () => {
     const textValue = inputField.value;
 
     inputField.value = '';
-    console.log(textValue);
 }
+
+// Enter Btn Key Press Action
+const enterBtnAction = () => {
+    let input = document.getElementById("searchProduct");
+    input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("searchBtn").click();
+        }
+    });
+}
+enterBtnAction();
 
 const loadProducts = () => {
     const data = [{
