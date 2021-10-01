@@ -262,10 +262,33 @@ const showProducts = (products) => {
                     </div>
                     <div class="btn-group d-flex justify-content-between" role="group" aria-label="Basic example">
                         <button type="button" onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="btn btn-warning text-white" title="Add to Cart"><i class="fas fa-shopping-cart"></i></button>
-                        <button type="button" class="btn btn-secondary text-white" title="Details"><i class="fas fa-info-circle"></i></button>
+                        <button type="button" class="btn btn-secondary text-white" title="Details" data-toggle="modal" data-target="#details-${product.id}"><i class="fas fa-info-circle"></i></button>
                     </div>
                 </div>
             </div>
+            
+            <!-- Product Item Details Showing Modal -->
+            <div class="modal fade" id="details-${product.id}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Product More Inof</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card">
+                                <img src="${image ? image : `assets/image/image_not_found.png`}" class="card-img-top img-fluid p-4 border-bottom" alt="${image ? image : `assets/image/image_not_found.png`}">
+                                <div class="card-body">
+                                    <h3 class="mb-3"> <span class="font-weight-bold themeLetter" style="display: inline-block">Product Name:</span> ${product.title} </h3>
+                                    <h3 class="m-0"> <span class="font-weight-bold themeLetter" style="display: inline-block">Product Details:</span> ${product.description} </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
       `;
         document.getElementById("all-products").appendChild(div);
     }
