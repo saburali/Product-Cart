@@ -6,6 +6,12 @@ window.onscroll = function () {
     } else {
         body.classList.remove("scrolling");
     }
+
+    if (window.pageYOffset > 1000) {
+        body.classList.add("longScroll");
+    } else {
+        body.classList.remove("longScroll");
+    }
 }
 
 const loadProducts = () => {
