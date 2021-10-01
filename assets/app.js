@@ -214,12 +214,12 @@ const showProducts = (products) => {
     const allProducts = products.map((pd) => pd);
     for (const product of allProducts) {
 
-        const image = product.images;
+        // const image = ;
         const div = document.createElement("div");
         div.classList.add("col-md-4");
         div.innerHTML = `
             <div class="card mb-4">
-                <img src="${image ? image : `assets/image/image_not_found.png`}" class="card-img-top img-fluid p-4 border-bottom" alt="${image ? image : `assets/image/image_not_found.png`}">
+                <img src="${product.image ? product.image : `assets/image/image_not_found.png`}" class="card-img-top img-fluid p-4 border-bottom" alt="${product.image ? product.image : `assets/image/image_not_found.png`}">
                 <div class="card-body">
                     <p class="mb-1 category" title="${product.category}">Category: <span class="themeLetter" style="display: inline-block"> ${product.category} </span></p>
                     <h5 class="card-title themeLetter" title="Title: ${product.title}">
@@ -279,7 +279,7 @@ const showProducts = (products) => {
                         </div>
                         <div class="modal-body">
                             <div class="card">
-                                <img src="${image ? image : `assets/image/image_not_found.png`}" class="card-img-top img-fluid p-4 border-bottom" alt="${image ? image : `assets/image/image_not_found.png`}">
+                                <img src="${product.image ? product.image : `assets/image/image_not_found.png`}" class="card-img-top img-fluid p-4 border-bottom" alt="${product.image ? product.image : `assets/image/image_not_found.png`}">
                                 <div class="card-body">
                                     <h3 class="mb-3"> <span class="font-weight-bold themeLetter" style="display: inline-block">Product Name:</span> ${product.title} </h3>
                                     <h3 class="m-0"> <span class="font-weight-bold themeLetter" style="display: inline-block">Product Details:</span> ${product.description} </h3>
@@ -307,10 +307,6 @@ const addToCart = (id, price) => {
     if (productQuantity > 0) {
         button.style.cursor = "pointer";
         button.disabled = false;
-    }
-    else {
-        button.style.cursor = "not-allowed";
-        button.disabled = true;
     }
 };
 
@@ -386,6 +382,11 @@ function buyNow() {
             </div>
         </div>
     `;
+
+    // Buy Now Button Disable
+    const button = document.getElementById('buyBtn');
+    button.style.cursor = "not-allowed";
+    button.disabled = true;
 }
 
 function closeModal() {
