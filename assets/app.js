@@ -299,9 +299,19 @@ const addToCart = (id, price) => {
     updatePrice("price", price);
 
     updateTaxAndCharge();
-    document.getElementById("total-Products").innerText = count;
+    const productQuantity = document.getElementById("total-Products").innerText = count;
 
     updateTotal();
+
+    const button = document.getElementById('buyBtn');
+    if (productQuantity > 0) {
+        button.style.cursor = "pointer";
+        button.disabled = false;
+    }
+    else {
+        button.style.cursor = "not-allowed";
+        button.disabled = true;
+    }
 };
 
 const getInputValue = (id) => {
