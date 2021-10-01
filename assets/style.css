@@ -64,18 +64,34 @@ input[type="color"]:focus,
     margin-top: -90px !important;
 }
 
-.scrolling .searchProduct {
-    position: fixed;
-    top: 90px;
-    left: 8.40%;
-    width: 58.2%;
-    z-index: 9;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+/* Responsive */
+@media only screen and (max-width: 1645px) {
+    .scrolling .searchProduct {
+        left: 3.9%;
+        width: 67.3%;
+    }
 }
 
-.longScroll .searchProduct {
-    padding: 8px 0 0 0;
+@media only screen and (max-width: 1280px) {
+    .searchProduct {
+        margin-top: -140px !important;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .scrolling .searchProduct {
+        position: fixed;
+        top: 90px;
+        left: 8.40%;
+        width: 58.2%;
+        z-index: 9;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .longScroll .searchProduct {
+        padding: 8px 0 0 0;
+    }
 }
 
 .searchProduct {
@@ -120,7 +136,7 @@ header {
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Creepster', cursive;
-    background-image: url(image/banner.jpg);
+    background-image: url(image/banner.png);
 }
 
 header h1 {
@@ -140,19 +156,16 @@ header h1::before {
     font-family: 'Lobster', cursive;
 }
 
+/* Responsive */
+@media only screen and (max-width: 1645px) {
+    header h1 {
+        font-size: 70px;
+    }
+}
+
 /* Result Cart */
 .result-cart {
     margin-top: -90px !important;
-}
-
-.scrolling .result-cart {
-    position: fixed;
-    top: 90px;
-    right: 3%;
-    width: 20%;
-    z-index: 9;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
 }
 
 .result-cart {
@@ -186,6 +199,38 @@ header h1::before {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid gray;
+}
+
+/* Responsive */
+@media only screen and (max-width: 1280px) {
+    .result-cart {
+        margin-top: -140px !important;
+    }
+}
+
+@media only screen and (min-width: 1282px) {
+    .scrolling .result-cart {
+        position: fixed;
+        top: 90px;
+        right: 1.8%;
+        width: 19%;
+        z-index: 9;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1281px){
+    .scrolling .result-cart {
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .result-cart {
+        margin-top: 20px !important;
+        padding: 0;
+    }
 }
 
 /* Products */

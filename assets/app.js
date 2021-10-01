@@ -82,7 +82,9 @@ const showProducts = (products) => {
     const allProducts = products.map((pd) => pd);
     for (const product of allProducts) {
         const div = document.createElement("div");
-        div.classList.add("col-md-4");
+        div.classList.add("col-lg-4");
+        div.classList.add("col-md-6");
+        div.classList.add("col-12");
         div.innerHTML = `
             <div class="card mb-4">
                 <img src="${product.image ? product.image : `assets/image/image_not_found.png`}" class="card-img-top img-fluid p-4 border-bottom" alt="${product.title}">
