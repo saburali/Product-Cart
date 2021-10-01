@@ -300,3 +300,37 @@ const updateTotal = () => {
     document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
 loadProducts();
+
+// Buy Now Button Handler
+function buyNow() {
+    document.getElementById('total-Products').textContent = '0';
+    document.getElementById('price').textContent = '0';
+    document.getElementById('delivery-charge').textContent = '20';
+    document.getElementById('total-tax').textContent = '0';
+    document.getElementById('total').textContent = '0';
+
+    const buyModal = document.getElementById('body');
+    buyModal.classList.add('modalShow');
+
+    const modalContent = document.getElementById('buy-now-modal');
+    modalContent.innerHTML = `
+        <div class="buy-modal">
+            <div class="row">
+                <div class="col-md-6 col-12 mx-auto">
+                    <div class="sbd-modal-content text-center">
+                        <h2> Your order has been confirmed. </h2>
+                        <h2> Please wait for product delivery. </h2>
+                        <button class="btn btn-warning px-5 text-white border-0 mt-5"
+                                style="font-size: 16px; text-transform: uppercase;" onclick="closeModal()"> Okay
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function closeModal() {
+    const buyModal = document.getElementById('body');
+    buyModal.classList.remove('modalShow');
+}
