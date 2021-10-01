@@ -14,6 +14,15 @@ window.onscroll = function () {
     }
 }
 
+// Click Search Button -> Get Input Value
+const productSearch = () => {
+    const inputField = document.getElementById('searchProduct');
+    const textValue = inputField.value;
+
+    inputField.value = '';
+    console.log(textValue);
+}
+
 const loadProducts = () => {
     const data = [{
         "id": 1,
